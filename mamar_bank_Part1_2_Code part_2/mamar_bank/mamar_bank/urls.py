@@ -24,5 +24,3 @@ urlpatterns = [
     path('transactions/', include('transactions.urls')),
 ]
 
-# accounts/login
-# accounts/register

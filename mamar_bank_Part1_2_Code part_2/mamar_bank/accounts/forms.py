@@ -19,7 +19,7 @@ class UserRegistrationForm(UserCreationForm):
         
         # form.save()
     def save(self, commit=True):
-        our_user = super().save(commit=False) # ami database e data save korbo na ekhn
+        our_user = super().save(commit=False) 
         if commit == True:
             our_user.save() # user model e data save korlam
             account_type = self.cleaned_data.get('account_type')
@@ -109,7 +109,7 @@ class UserUpdateForm(forms.ModelForm):
         if commit:
             user.save()
 
-            user_account, created = UserBankAccount.objects.get_or_create(user=user) # jodi account thake taile seta jabe user_account ar jodi account na thake taile create hobe ar seta created er moddhe jabe
+            user_account, created = UserBankAccount.objects.get_or_create(user=user) 
             user_address, created = UserAddress.objects.get_or_create(user=user) 
 
             user_account.account_type = self.cleaned_data['account_type']
